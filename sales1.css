@@ -15,27 +15,47 @@ body {
   background-size: cover;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 
 h2, h5 {
   color: #2F463D;
 }
-h2, h5, h6, a, #ready-to-eat {
+h2, h5, h6, a, button {
   font-family: Monserrat;
 }
 
 /* Mobile-first */
-.step-panel {
+.panel {
   width: 350px;
   height: 650px;
-  max-height: 700px;
   background-color: #fff;
-  margin:  70px auto;
+  margin:  70px 0;
   box-shadow: 0px 40px 40px -20px #3C7B61;
   border-radius: 5px;
   position: relative;
 }
+
+
+.panel.left {
+  margin-right: -20px;
+}
+
+
+.panel.right {
+  margin-left: -20px;
+}
+
+.panel.left, .panel.right {
+  height: 600px;
+}
+
+.panel.center {
+  z-index: 9;
+  width: 370px;
+}
+
 
 .close-button {
   position: absolute;
@@ -50,17 +70,15 @@ h2, h5, h6, a, #ready-to-eat {
   padding: 55px 45px;
 }
 
-.top-img {
-  display: block;
-  margin: auto;
+.inner-container >img {
   width: 50%;
-  height: 109px;
 }
 
 .inner-container > h2 {
   margin: 20px 0 10px;
   font-size: 22px;
   font-weight: 600;
+  height: 60px;
 }
 
 .inner-container > p {
@@ -68,11 +86,10 @@ h2, h5, h6, a, #ready-to-eat {
   font-family: Ubuntu;
   font-size: 14px;
   line-height: 26px;
-  margin-bottom: 60px;
 }
 
 .food-selection {
-  margin: 0 0 30px;
+  margin: 40px 0 30px;
   display: flex;
   background: #F0FFF5;
   align-items: center;
@@ -145,28 +162,24 @@ h2, h5, h6, a, #ready-to-eat {
 }
 .dot {
   background: #E0E0E0;
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   border-radius: 100%;
 }
 
-.green {
+.dot.green {
   background: #67BD99;
 }
 
-
-.desktop {
+.right, .left  {
   display: none;
-  width: 0px;
 }
+
+
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-  .desktop {
+  .left, .right {
     display: block;
-    width: 350px;
-  }
-  .order-panel {
-     width: 1272px;
   }
 }
